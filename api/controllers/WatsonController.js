@@ -8,7 +8,7 @@
 module.exports = {
 
 	uploadImage: function(req, res){
-		req.file('files').upload({
+		req.file('image').upload({
 			// don't allow the total upload size to exceed ~20MB
 			maxBytes: 20000000
 			},function whenDone(err, uploadedFiles) {
