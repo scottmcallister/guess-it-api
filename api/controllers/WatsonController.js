@@ -7,9 +7,22 @@
 
 module.exports = {
 
-	readImage: function(req, res){
-		
-		return res.json({test: "test"});
+	uploadImage: function(req, res){
+		req.file('avatar').upload({
+			// don't allow the total upload size to exceed ~20MB
+			maxBytes: 20000000
+			},function whenDone(err, uploadedFiles) {
+			if (err) {
+				return res.negotiate(err);
+			}
+
+			// If no files were uploaded, respond with an error.
+			if (uploadedFiles.length === 0){
+				return res.badRequest('No file was uploaded');
+			}
+
+			return res.ok();
+		});
 	}
 	
 };

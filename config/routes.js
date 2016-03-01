@@ -46,6 +46,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/readImage': 'WatsonController.readImage'
+  'post /uploadImage': 'WatsonController.uploadImage'
 
 };
