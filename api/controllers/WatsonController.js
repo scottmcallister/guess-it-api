@@ -35,7 +35,7 @@ module.exports = {
 				console.log(uploadedFiles);
 
 				var params = {
-					images_file: fs.createReadStream(uploadedFiles)
+					images_file: fs.createReadStream(uploadedFiles[0].fd)
 				};
 
 				visual_recognition.classify(params, function(err, res){
