@@ -44,8 +44,6 @@ module.exports = {
 					else
 						return res.json(response);
 				});
-
-				return res.ok();
 			});
 	}
 	
