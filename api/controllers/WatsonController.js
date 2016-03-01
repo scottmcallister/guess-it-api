@@ -38,11 +38,11 @@ module.exports = {
 					images_file: fs.createReadStream(uploadedFiles[0].fd)
 				};
 
-				visual_recognition.classify(params, function(err, res){
+				visual_recognition.classify(params, function(err, response){
 					if(err)
 						return res.negotiate(err);
 					else
-						return res.json(res);
+						return res.json(response);
 				});
 
 				return res.ok();
